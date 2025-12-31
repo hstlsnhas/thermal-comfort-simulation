@@ -14,8 +14,8 @@ if not os.path.exists(MODEL_DIR): os.makedirs(MODEL_DIR)
 print("📂 Loading Final Data...")
 df = pd.read_csv(INPUT_FILENAME)
 
-# FITUR: 5 Sensor Fisik (Tanpa Jam, Tanpa Scaling karena RF hebat)
-features = ['occupancy', 'temp', 'hum', 'lux', 'noise']
+# FITUR # Tanpa scaling karena model yang dipakai RF
+features = ['occupancy', 'temp', 'hum', 'lux', 'noise', 'luas']
 X = df[features]
 
 # TARGET
@@ -56,7 +56,7 @@ print(f"   ✅ Rata-rata Meleset (MAE): {mae:.5f}")
 # --- 3. SIMPAN MODEL ---
 print("\n💾 Menyimpan Model Final...")
 joblib.dump(clf, f'{MODEL_DIR}rf_status_model.pkl')
-joblib.dump(reg, f'{MODEL_DIR}rf_metrics_model.pkl')
+joblib.dump(reg, f'{MODEL_DIR}rf_energy_model.pkl')
 
 print("\n🎉 SELESAI! Model Random Forest siap dideploy.")
 print(f"   Lokasi: {MODEL_DIR}")
