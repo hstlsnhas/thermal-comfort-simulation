@@ -191,7 +191,7 @@ df_final.dropna(subset=['timestamp', 'temp'], inplace=True)
 
 # 4. CALCULATE
 print("⚡ Menghitung Status...")
-df_final['luas'] = 176
+df_final['luas'] = 88
 df_final['energy_kwh'] = df_final['temp'].apply(get_kwh_estimation)
 status_results = [get_compliance_status(row) for idx, row in df_final.iterrows()]
 df_final['status'], df_final['pmv'], df_final['ppd'] = zip(*status_results)
@@ -223,6 +223,6 @@ stat = pd.concat([
 ], axis=1)
 print(stat)
 
-#print(f"\n💾 Menyimpan ke '{OUTPUT_FILENAME}'...")
-#df_final.to_csv(OUTPUT_FILENAME, index=False)
-#print("✅ SELESAI!")
+print(f"\n💾 Menyimpan ke '{OUTPUT_FILENAME}'...")
+df_final.to_csv(OUTPUT_FILENAME, index=False)
+print("✅ SELESAI!")
