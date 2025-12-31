@@ -4,7 +4,7 @@ import os
 
 # --- KONFIGURASI ---
 INPUT_FILENAME  = 'clean_data.csv'
-OUTPUT_FILENAME = 'train_data_new.csv'
+OUTPUT_FILENAME = 'train_data.csv'
 GAP_START       = "2025-12-24 00:00:00"
 GAP_END         = "2025-12-28 23:59:59"
 
