@@ -27,8 +27,8 @@ if 'timestamp' in pd.read_csv(INPUT_FILENAME).columns:
 else:
     print("File tidak ditemukan atau format salah"); exit()
 
-# FITUR (Pastikan kolom ini ada di CSV kamu)
-features = ['occupancy', 'temp', 'hum', 'lux', 'noise']
+# FITUR
+features = ['occupancy', 'temp', 'hum', 'lux', 'noise', 'luas']
 X = df[features]
 
 # TARGET
